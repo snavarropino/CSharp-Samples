@@ -11,12 +11,12 @@ namespace ConsoleExample1
     {
         static void Main(string[] args)
         {
-            FooAsync();
+            FooAsync(); 
             Console.WriteLine("Main continues execution...");
             Console.ReadLine();            
         }
 
-        public static async void FooAsync()
+        public static async Task<bool>  FooAsync()
         {            
             Console.WriteLine("Foo is going to call ExecuteLongRunningTask...");
             Task<string> t = ExecuteLongRunningTask();
@@ -27,6 +27,7 @@ namespace ConsoleExample1
 
             var s = await t;
             Console.WriteLine("Foo got the response: {0}", s);
+            return true;
         }
 
         public static Task<string> ExecuteLongRunningTask()
