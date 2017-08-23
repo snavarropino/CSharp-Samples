@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ConsoleAppCore11
+namespace ConsoleAppCore
 {
     public static class Program
     {
         public static void Main(string[] args)
         {
             try
-            {                
+            {
+                Console.WriteLine("==============================================");
                 Console.WriteLine("CatchAndThrow:");
                 CatchAndThrow();
             }
@@ -23,7 +22,6 @@ namespace ConsoleAppCore11
             {
 
                 Console.WriteLine("==============================================");
-                Console.WriteLine("==============================================");
                 Console.WriteLine("CatchAndThrowEx:");
                 CatchAndThrowEx();
             }
@@ -32,17 +30,17 @@ namespace ConsoleAppCore11
                 ex.ToConsole();
             }
 
-            try
-            {
-                Console.WriteLine("==============================================");
-                Console.WriteLine("==============================================");
-                Console.WriteLine("CatchAndThrowNewEx:");
-                CatchAndThrowNewEx();
-            }
-            catch (Exception ex)
-            {
-                ex.ToConsole();
-            }
+            //try
+            //{
+            //    Console.WriteLine("==============================================");
+            //    Console.WriteLine("==============================================");
+            //    Console.WriteLine("CatchAndThrowNewEx:");
+            //    CatchAndThrowNewEx();
+            //}
+            //catch (Exception ex)
+            //{
+            //    ex.ToConsole();
+            //}
         }
 
         public static void CatchAndThrow()
@@ -83,10 +81,37 @@ namespace ConsoleAppCore11
 
         public static int FaultyCode(int number)
         {
+            DoStuff1();
+            DoStuff2();
+
             int divisor = 0;
-            return number / divisor;
+            return GetNumber() / divisor;
         }
 
+        private static void DoStuff1()
+        {
+            for (int i = 0; i < 3; i++)
+                Console.Write(".");
+            Console.WriteLine();
+        }
+
+        private static void DoStuff2()
+        {
+            var list = new List<string>();
+            list.Add("one");
+            list.Add("two");
+            Console.WriteLine($"DoStuff2:{string.Join(" ",list)}");
+        }
+
+        private static int GetNumber()
+        {
+            int sum = 5;
+
+            for (int i = 5; i <= 10; i++)
+                sum += i;
+
+            return sum;
+        }
         public static void ToConsole(this Exception ex)
         {
             Console.WriteLine(ex.StackTrace);

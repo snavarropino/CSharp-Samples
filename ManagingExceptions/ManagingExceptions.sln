@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConsoleAppCore11", "ConsoleAppCore11\ConsoleAppCore11.xproj", "{76873D67-84DC-4363-82AD-AB8D60880A60}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConsoleAppCore", "ConsoleAppCore11\ConsoleAppCore.xproj", "{76873D67-84DC-4363-82AD-AB8D60880A60}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ConsoleNetFx", "ConsoleNetFx\ConsoleNetFx.xproj", "{61D6B906-5CF3-46B0-8318-B6C81C5AE4A9}"
 EndProject
